@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .gd{
+        background-image: linear-gradient(135deg, rgb(182, 244, 85),rgb(63, 128, 87));
+    }
+}
+
+
