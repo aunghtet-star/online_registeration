@@ -515,29 +515,6 @@
 
 @endsection
 @section('script')
-
-    {!! JsValidator::formRequest('App\Http\Requests\FirstYearEnrollmentRequest','#enroll-form') !!}
-
-    <script>
-
-        const form = document.getElementById('enroll-form');
-        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-        const orderInput = document.getElementById('majorOrder');
-
-        let checkedOrder = [];
-
-        checkboxes.forEach((checkbox) => {
-            checkbox.addEventListener('change', (event) => {
-                const value = event.target.value;
-                if (event.target.checked) {
-                    checkedOrder.push(value);
-                } else {
-                    checkedOrder = checkedOrder.filter(item => item !== value);
-                }
-                orderInput.value = checkedOrder.join(',');
-            });
-        });
-    </script>
 @endsection
 
 

@@ -40,12 +40,7 @@
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/profile') }}" class="font-semibold hover:bg-slate-900 hover:scale-110 hover:text-gray-400 dark:hover:text-gray-800 text-gray-600 dark:text-gray-300 border border-gray-900 md:p-4 p-1 rounded dark:hover:bg-green-500 duration-300 dark:border-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">My Profile</a>
-                @else
-                    <a href="{{ route('login') }}" class="font-semibold hover:bg-slate-900 hover:scale-110 hover:text-gray-400 dark:hover:text-gray-800 text-gray-600 dark:text-gray-300 border border-gray-900 md:p-4 p-1 rounded dark:hover:bg-green-500 duration-300 dark:border-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Log in</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 font-semibold hover:bg-slate-900 hover:scale-110 hover:text-gray-400 dark:hover:text-gray-800 text-gray-600 dark:text-gray-300 border border-gray-900 md:p-4 p-1 rounded dark:hover:bg-green-500 duration-300 dark:border-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Register</a>
-                    @endif
                 @endauth
             @endif
         </div>
@@ -64,7 +59,8 @@
 <!-- Laravel Javascript Validation -->
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
-
+<!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
 
 <script>

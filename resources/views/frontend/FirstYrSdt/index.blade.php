@@ -23,14 +23,14 @@
 
 
     <p class="dark:text-xl dark:text-gray-300 mb-6 flex justify-center underline">ဤတက္ကသိုလ်တွင်တက်ရောက်နိုင်သော သင်တန်းများထဲမှ တက်ရောက်လိုသောသင်တန်း ယခုပြန်လည်လျှောက်ထားသော ဦးစားပေးအစီအစဉ်</p>
-    <p class="dark:text-xl dark:text-gray-300 mb-6 flex justify-center underline">ဦးစားပေးအစဥ်လိုက်အတိုင်းအမှန်ခြစ်ပေးပါ</p>
+    <p class="dark:text-xl dark:text-gray-300 mb-6 flex justify-center underline">ဦးစားပေးအစဥ်လိုက်အတိုင်း နေရာရွှေ့ပေးပါ</p>
     <form action="{{url('first-yr-enroll/store')}}" class="group bg-gray-200 dark:bg-slate-900 shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" enctype="multipart/form-data" id="enroll-form" novalidate>
         @csrf
-        <ul class="w-full flex flex-col mb-6">
+        <ul class="w-full flex flex-col mb-6" id="majors">
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="civil" name="majors[]" value="civil" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="civil" name="majorOrder[]" value="civil" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="civil" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၁။ မြိုပြအင်ဂျင်နီယာဘာသာရပ်(Civil)
@@ -41,7 +41,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="ec" name="majors[]" value="ec" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="ec" name="majorOrder[]" value="ec" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="ec" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၂။ အီလက်ထရောနစ် အင်ဂျင်နီယာဘာသာရပ်(EC)
@@ -51,7 +51,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="ep" name="majors[]" value="ep" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="ep" name="majorOrder[]" value="ep" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="ep" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၃။ လျှပ်စစ်စွမ်းအား အင်ဂျင်နီယာဘာသာရပ်(EP)
@@ -61,7 +61,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="mp" name="majors[]" value="mp" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="mp" name="majorOrder[]" value="mp" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="mp" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၄။ စက်မှုအင်ဂျင်နီယာဘာသာရပ်(Mech)
@@ -71,17 +71,17 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="it" name="majors[]" value="it" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="it" name="majorOrder[]" value="it" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="it" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
-                        ၅။ သုတနည်းပညာဘာသာရပ်(IT)
+                        ၅။ သုတနည်းပညာ အင်ဂျင်နီယာဘာသာရပ်(IT)
                     </label>
                 </div>
             </li>
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="mc" name="majors[]" value="mc" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="mc" name="majorOrder[]" value="mc" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="mc" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၆။ စက်မှုအီလက်ထရောနစ်(MC)
@@ -91,7 +91,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="met" name="majors[]" value="met" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="met" name="majorOrder[]" value="met" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="met" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၇။ သတ္ထုဗေဒ အင်ဂျင်နီယာဘာသာရပ်(Met)
@@ -101,7 +101,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="biot" name="majors[]" value="bio.t" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="biot" name="majorOrder[]" value="bio.t" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="biot" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၈။ ဇီဝနည်းပညာဘာသာရပ်(Bio.T)
@@ -111,7 +111,7 @@
             <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white">
                 <div class="relative flex items-start w-full">
                     <div class="flex items-center h-5">
-                        <input id="nt" name="majors[]" value="nt" type="checkbox" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
+                        <input id="nt" name="majorOrder[]" value="nt" type="hidden" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-500 dark:border-gray-600" required>
                     </div>
                     <label for="nt" class="ms-3.5 block w-full text-sm text-gray-600 dark:text-neutral-500">
                         ၉။ နျူကလီးယားနည်းပညာအင်ဂျင်နီယာ ဘာသာရပ်(NT)
@@ -120,7 +120,7 @@
             </li>
 
             <!-- Hidden input to store the order -->
-            <input type="hidden" id="majorOrder" name="majorOrder">
+{{--            <input type="hidden" id="majorOrder" name="majorOrder">--}}
 
         </ul>
 
@@ -324,7 +324,7 @@
             <label class="block dark:text-gray-200 text-sm font-bold mb-2" for="birthday">
                 မွေးသက္ကရာဇ်(တက္ကသိုလ်ဝင်တန်းစာမေးပွဲဖြေဆိုစဉ်ကဖော်ပြသည့်အတိုင်းထည့်ရန်)
             </label>
-            <input class="peer shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" id="birthday" name="birthday" type="text" placeholder="Birthday (eg. 24.12.1999)" required pattern="^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\d\d$">
+            <input class="peer shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" id="birthday" name="birthday" type="text" placeholder="Birthday (eg. 24.12.1999)" required pattern="^(0[1-9]|[12][0-9]|3[01]).(0[1-9]|1[0-2]).(19|20)\d\d$">
             <span class="peer-[&:not(:placeholder-shown):not(:focus):invalid]:block hidden text-red-500 text-xs mt-1">Birthday is required (eg. 24.12.1999)</span>
         </div>
 
@@ -570,6 +570,16 @@
 
     <script>
 
+        var el = document.getElementById('majors');
+
+        var sortable = new Sortable(el, {
+            animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
+            easing: "cubic-bezier(1, 0, 0, 1)", //
+        })
+
+
+
+
         const form = document.getElementById('enroll-form');
         const checkboxes = form.querySelectorAll('input[type="checkbox"]');
         const orderInput = document.getElementById('majorOrder');
@@ -589,5 +599,4 @@
         });
     </script>
 @endsection
-
 

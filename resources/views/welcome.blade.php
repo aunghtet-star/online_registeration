@@ -5,12 +5,23 @@
             <img src="https://i.pinimg.com/564x/50/96/a0/5096a0b9562ddd7555e48118b6100075.jpg" class="object-fill rounded" alt="tukse">
         </div>
         <div class=" md:justify-center md:content-center">
-            <div class="inline-block border border-gray-900 hover:bg-gray-600  hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300 ">
-                <a href="{{url('first-yr-enroll')}}" class="text-base hover:text-gray-200  text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6 ">ပထမနှစ်ကျောင်းအပ်ရန်</a>
-            </div>
-            <div class="border border-gray-900  hover:bg-gray-600 hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300">
-                <a href="{{url('sec-to-final-yr-enroll')}}" class="text-base hover:text-gray-200 text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6"> Second year မှစကျောင်းအပ်ရန်</a>
-            </div>
+
+            @auth
+                <div class="inline-block border border-gray-300 hover:bg-gray-600  hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300 ">
+                    <a href="{{url('first-yr-enroll')}}" class="text-base hover:text-gray-200  text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6 ">ပထမနှစ်ကျောင်းအပ်ရန်</a>
+                </div>
+                <div class="border border-gray-300  hover:bg-gray-600 hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300">
+                    <a href="{{url('sec-to-final-yr-enroll')}}" class="text-base hover:text-gray-200 text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6"> Second year မှစကျောင်းအပ်ရန်</a>
+                </div>
+            @else
+                <div class="inline-block border border-gray-300 hover:bg-gray-600  hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300 ">
+                    <a href="{{ route('login') }}" class="text-base hover:text-gray-200  text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6 ">Login</a>
+                </div>
+                <div class="border border-gray-300  hover:bg-gray-600 hover:scale-95 rounded shadow mt-3 h-20 w-full dark:hover:bg-green-500 duration-300">
+                    <a href="{{ route('register') }}" class="text-base hover:text-gray-200 text-gray-900 dark:text-gray-300 flex justify-center align-middle mt-6"> Register</a>
+                </div>
+            @endauth
+
         </div>
     </div>
 

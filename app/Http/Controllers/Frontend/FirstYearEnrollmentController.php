@@ -19,8 +19,6 @@ class FirstYearEnrollmentController extends Controller
 
     public function store(Request $request)
     {
-
-
         $user_id = Auth::id();
 
         $profile_img_name = null;
@@ -55,7 +53,11 @@ class FirstYearEnrollmentController extends Controller
 
 
         $first_year_enrollment = new FirstYearEnrollment();
-        $first_year_enrollment->majorOrder = $request->get('majorOrder');
+
+        $majorOrderArray = $request->get('majorOrder');
+        $majorOrder = implode(',', $majorOrderArray);
+
+        $first_year_enrollment->majorOrder = $majorOrder;
         $first_year_enrollment->m_name = $request->get('m_name');
         $first_year_enrollment->e_name = $request->get('e_name');
         $first_year_enrollment->nrc = $request->get('nrc');
