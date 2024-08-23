@@ -14,7 +14,7 @@ class FirstYearEnrollmentController extends Controller
 {
     public function index()
     {
-        return view('frontend.firstYrSdt.index');
+        return view('frontend.FirstYrSdt.index');
     }
 
     public function store(Request $request)
@@ -93,6 +93,6 @@ class FirstYearEnrollmentController extends Controller
     }
 
     public function review(){
-        return view('frontend.firstYrSdt.review');
+        return view('frontend.FirstYrSdt.review');
     }
 }
