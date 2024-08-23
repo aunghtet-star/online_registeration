@@ -32,11 +32,11 @@
 <body class="dark:bg-slate-800 shadow">
 
 <div class="md:container md:mx-auto bg-gray-100 dark:bg-slate-900 min-h-screen pt-2 px-4">
-    <div class="h-40 dark:gd  md:h-28 border-b-2 mb-2 dark:border-gray-100 shadow ">
+    <div class="min-h-20 dark:gd  md:h-28 border-b-2 mb-2 dark:border-gray-100 shadow ">
         <img src="https://www.kyauksetu.edu.mm/wp-content/uploads/2023/10/TUKSElogo-iso-1536x1536.png" alt="Logo" class="w-[50px] md:w-[100px] rounded mx-4 my-2 inline-block">
         <h1 class="text-lg md:text-3xl inline-block dark:text-gray-700 font-semibold text-gray-700">Kyaukse Technological University</h1>
 
-        <div class="inline-block flex align-middle justify-center  md:float-right md:pt-8 md:pr-8">
+        <div class="inline-block flex align-middle justify-center  md:float-right md:pt-8 md:pr-8 mb-3">
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/profile') }}" class="font-semibold hover:bg-slate-900 hover:scale-110 hover:text-gray-400 dark:hover:text-gray-800 text-gray-600 dark:text-gray-300 border border-gray-900 md:p-4 p-1 rounded dark:hover:bg-green-500 duration-300 dark:border-gray-900  focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">My Profile</a>
