@@ -11,7 +11,7 @@
             </div>
             <label class="block">
                 <span class="sr-only">Choose profile photo</span>
-                <input type="file" name="profile_photo" onchange="loadFile(event)" class="block w-full text-sm text-slate-500
+                <input type="file" name="profile_photo" onchange="loadFile(event)" required class="block w-full text-sm text-slate-500
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-semibold
