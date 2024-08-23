@@ -555,6 +555,15 @@
     {!! JsValidator::formRequest('App\Http\Requests\FirstYearEnrollmentRequest','#enroll-form') !!}
 
     <script>
+
+        var el = document.getElementById('majors');
+
+        var sortable = new Sortable(el, {
+            animation: 300,  // ms, animation speed moving items when sorting, `0` — without animation
+            easing: "cubic-bezier(1, 0, 0, 1)", //
+        })
+
+
         var loadFile = function(event) {
 
             var input = event.target;
